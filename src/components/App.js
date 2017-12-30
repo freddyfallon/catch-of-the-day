@@ -5,7 +5,6 @@ import Inventory from './Inventory';
 
 class App extends React.Component {
   render() {
-    console.log(this.props);
     return (
       <div className="catch-of-the-day">
         <div className="menu">
