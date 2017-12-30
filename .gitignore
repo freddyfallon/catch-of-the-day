@@ -1,5 +1,5 @@
 .DS_STORE
-node_modules
+
 .DocumentRevisions-V100
 .fseventsd
 .Spotlight-V100
@@ -9,3 +9,5 @@ node_modules
 
 .AppleDouble
 .LSOverride
+
+node_modules
