@@ -6,3 +6,6 @@ node_modules
 .TemporaryItems
 .Trashes
 .VolumeIcon.icns
+
+.AppleDouble
+.LSOverride
