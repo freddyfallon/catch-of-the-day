@@ -24,7 +24,10 @@ class StorePicker extends React.Component {
       </form>
     );
   }
-
 }
+
+StorePicker.contextTypes = {
+  router: React.PropTypes.object,
+};
 
 export default StorePicker;
