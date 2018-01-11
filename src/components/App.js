@@ -60,10 +60,10 @@ class App extends React.Component {
           <Header tagline="Fresh seafood market" />
           <ul className="list-of-fishes">
             {Object.keys(this.state.fishes)
-            .map(fish => <Fish key={fish} details={this.state.fishes[fish]} />)}
+            .map(fish => <Fish addToOrder={this.addToOrder} key={fish} index={fish} details={this.state.fishes[fish]} />)}
           </ul>
         </div>
-        <Order />
+        <Order fishes={this.state.fishes} order={this.state.order} params={this.props.params} />
         <Inventory addFish={this.addFish} loadSamples={this.loadSamples} />
       </div>
     );
