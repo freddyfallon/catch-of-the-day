@@ -24,11 +24,12 @@ class Inventory extends React.Component {
         <input type="text" name="name" value={fish.name} placeholder="Fish name" onChange={event => this.handleChange(event, key)} />
         <input type="text" name="price" value={fish.price} placeholder="Fish price" onChange={event => this.handleChange(event, key)} />
         <select type="text" name="status" value={fish.status} placeholder="Fish status" onChange={event => this.handleChange(event, key)} >
-          <option value="available">Fresh!</option>  
-          <option value="unavailable">Sold Out!</option>  
+          <option value="available">Fresh!</option>
+          <option value="unavailable">Sold Out!</option>
         </select>
         <textarea type="text" name="desc" value={fish.desc} placeholder="Fish desc" onChange={event => this.handleChange(event, key)} />
         <input type="text" name="image" value={fish.image} placeholder="Fish image"onChange={event => this.handleChange(event, key)} />
+        <button onClick={() => this.props.removeFish(key)}>Remove Fish</button>
       </div>
     );
   }
@@ -41,7 +42,7 @@ class Inventory extends React.Component {
         <AddFishForm addFish={this.props.addFish} />
         <button onClick={this.props.loadSamples}>Load Sample Fishes</button>
       </div>
-    ); 
+    );
   }
 }
 
