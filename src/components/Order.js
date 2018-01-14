@@ -24,8 +24,8 @@ class Order extends React.Component {
             component="span"
             className="count"
             transitionName="count"
-            transitionEnterTimeout={10000}
-            transitionLeaveTimeout={10000}
+            transitionEnterTimeout={250}
+            transitionLeaveTimeout={250}
           >
             <span key={count}>{count}</span>
           </CSSTransitionGroup>
@@ -51,7 +51,12 @@ class Order extends React.Component {
     return (
       <div className="order-wrap">
         <h2>Your Order</h2>
-        <CSSTransitionGroup className="order" component="ul" transitionName="order" transitionEnterTimeout={500} transitionLeaveTimeout={500}>
+        <CSSTransitionGroup
+          className="order"
+          component="ul"
+          transitionName="order"
+          transitionEnterTimeout={500}
+          transitionLeaveTimeout={500}>
           {orderIds.map(this.renderOrder)}
           <li className="total">
             <strong>Total:</strong>
