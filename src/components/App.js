@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import Header from './Header';
 import Order from './Order';
 import Inventory from './Inventory';
@@ -90,14 +90,34 @@ class App extends React.Component {
           <Header tagline="Fresh seafood market" />
           <ul className="list-of-fishes">
             {Object.keys(this.state.fishes)
-            .map(fish => <Fish addToOrder={this.addToOrder} key={fish} index={fish} details={this.state.fishes[fish]} />)}
+            .map(fish => (<Fish
+              addToOrder={this.addToOrder}
+              key={fish}
+              index={fish}
+              details={this.state.fishes[fish]}
+            />))}
           </ul>
         </div>
-        <Order fishes={this.state.fishes} order={this.state.order} params={this.props.params} removeFromOrder={this.removeFromOrder} />
-        <Inventory fishes={this.state.fishes} addFish={this.addFish} updateFish={this.updateFish} loadSamples={this.loadSamples} removeFish={this.removeFish} />
+        <Order
+          fishes={this.state.fishes}
+          order={this.state.order}
+          params={this.props.params}
+          removeFromOrder={this.removeFromOrder}
+        />
+        <Inventory
+          fishes={this.state.fishes}
+          addFish={this.addFish}
+          updateFish={this.updateFish}
+          loadSamples={this.loadSamples}
+          removeFish={this.removeFish}
+        />
       </div>
     );
   }
 }
+
+App.propTypes = {
+  params: PropTypes.shape({ storeId: PropTypes.string }).isRequired,
+};
 
 export default App;

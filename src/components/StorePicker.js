@@ -2,7 +2,6 @@ import React from 'react';
 import { getFunName } from '../helpers';
 
 class StorePicker extends React.Component {
-
   goToStore(event) {
     event.preventDefault();
     const storeId = this.storeInput.value;
@@ -17,7 +16,7 @@ class StorePicker extends React.Component {
           type="text"
           required
           placeholder="Store name"
-          defaultValue={getFunName()} 
+          defaultValue={getFunName()}
           ref={(input) => { this.storeInput = input; }}
         />
         <button type="submit">Visit store</button>
@@ -25,9 +24,5 @@ class StorePicker extends React.Component {
     );
   }
 }
-
-StorePicker.contextTypes = {
-  router: React.PropTypes.object,
-};
 
 export default StorePicker;

@@ -1,6 +1,6 @@
-import React from 'react';
-import { formatPrice } from '../helpers';
+import React, { PropTypes } from 'react';
 import CSSTransitionGroup from 'react-addons-css-transition-group';
+import { formatPrice } from '../helpers';
 
 class Order extends React.Component {
   constructor() {
@@ -56,7 +56,8 @@ class Order extends React.Component {
           component="ul"
           transitionName="order"
           transitionEnterTimeout={500}
-          transitionLeaveTimeout={500}>
+          transitionLeaveTimeout={500}
+        >
           {orderIds.map(this.renderOrder)}
           <li className="total">
             <strong>Total:</strong>
@@ -67,6 +68,12 @@ class Order extends React.Component {
     );
   }
 }
+
+Order.propTypes = {
+  order: PropTypes.shape({}).isRequired,
+  fishes: PropTypes.shape({}).isRequired,
+  removeFromOrder: PropTypes.func.isRequired,
+};
 
 export default Order;
 
